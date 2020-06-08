@@ -142,11 +142,12 @@ class ResNet(keras.Model):
 
         self.padding = keras.layers.ZeroPadding2D((3, 3))
         self.conv1 = keras.layers.Conv2D(filters=64,
-                                         kernel_size=7,
-                                         strides=2,
-                                         kernel_initializer='glorot_uniform',
+                                         kernel_size=(7,7),
+                                         strides=(2,2),
+                                         kernel_initializer = 'glorot_uniform',
                                          name='conv1')
-        self.bn_conv1 = keras.layers.BatchNormalization(axis=3, name='bn_conv1')
+
+        self.bn_conv1 = keras.layers.BatchNormalization(axis=-1, name='bn_conv1')
         self.max_pool = keras.layers.MaxPooling2D((3, 3),
                                                   strides=2,
                                                   padding='same')
