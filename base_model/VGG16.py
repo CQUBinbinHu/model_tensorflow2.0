@@ -1,9 +1,9 @@
 from tensorflow.python import keras
 
 
-def VGG16(classes=1000):
+def VGG16(input_shape = (None,224,224,3),classes=1000):
     model = keras.models.Sequential([
-        keras.layers.InputLayer(input_shape=(224,224,3)),
+        keras.layers.InputLayer(input_shape=input_shape),
         keras.layers.Conv2D(filters=64, kernel_size=3,
                             strides=1, padding='same',
                             activation='relu', name='conv1_1'),
