@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow import keras
 
-def AlexNet(input_shape = [150, 150, 3] ,classes_num = 3,dropout = 0.5 )
+def AlexNet(input_shape = [224, 224, 1] ,classes_num = 3,dropout = 0.5 )
     # Define the input layer
     inputs = keras.Input(input_shape = input_shape)
 
