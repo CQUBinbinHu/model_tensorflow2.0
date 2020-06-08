@@ -63,3 +63,4 @@ def VGG16(input_shape = (None,224,224,3),classes=1000):
 if __name__ == '__main__':
     model = VGG16()
     model.summary()
+    pass
