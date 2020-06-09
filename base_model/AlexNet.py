@@ -1,9 +1,9 @@
 import tensorflow as tf
 from tensorflow import keras
 
-def AlexNet(input_shape = [224, 224, 1] ,classes_num = 3,dropout = 0.5 )
+def AlexNet(input_shape = [224, 224, 1] ,classes_num = 3,dropout = 0.5 ):
     # Define the input layer
-    inputs = keras.Input(input_shape = input_shape)
+    inputs = keras.Input(shape = input_shape)
 
     # Define the converlutional layer 1
     conv1 = keras.layers.Conv2D(filters= 96, kernel_size= [11, 11], strides= [4, 4], activation= keras.activations.relu, use_bias= True, padding= 'valid')(inputs)
@@ -50,3 +50,8 @@ def AlexNet(input_shape = [224, 224, 1] ,classes_num = 3,dropout = 0.5 )
     model = keras.Model(inputs= inputs, outputs = fc3)
 
     return model
+
+if __name__ == "__main__":
+    model = AlexNet()
+    model.summary()
+    pass
